@@ -18,9 +18,6 @@ using Windows.System;
 
 namespace Zelda2D_Clone
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class MainPage : Page
     {
         public MainPage()
@@ -60,6 +57,33 @@ namespace Zelda2D_Clone
         private void Clicked_Right(object sender, RoutedEventArgs e)
         {
             Player.Margin = new Thickness(Player.Margin.Left + 20.0, Player.Margin.Top, Player.Margin.Right + 20.0, Player.Margin.Bottom);
+        }
+
+        /* 11/20/2018
+         * The method  below, "keyPressed," does the same as the code above but does it through keyboard inputs instead of clicking buttons. 
+         * Bugs:
+         *      -Same as above. 
+         *      -Currently trying to make this work without having to add the TextBox control but it appears there is a "Focus" problem.
+         *          Tried adding the event to the image(the player, Link) but it is never called because the image is never "in Focus."
+         *          The TextBox is a temporary solution as it is easy to bring it into focus by simply clickig on it. 
+         */
+        private void keyPressed(object sender, KeyRoutedEventArgs e)
+        {
+            switch (e.Key)  //Holds a VirtualKey type that specifies which key was pressed when the event is called.
+            {
+                case VirtualKey.A:
+                    Player.Margin = new Thickness(Player.Margin.Left - 20.0, Player.Margin.Top, Player.Margin.Right - 20.0, Player.Margin.Bottom);
+                    break;
+                case VirtualKey.W:
+                    Player.Margin = new Thickness(Player.Margin.Left, Player.Margin.Top - 20.0, Player.Margin.Right, Player.Margin.Bottom - 20.0);
+                    break;
+                case VirtualKey.S:
+                    Player.Margin = new Thickness(Player.Margin.Left, Player.Margin.Top + 20.0, Player.Margin.Right, Player.Margin.Bottom + 20.0);
+                    break;
+                case VirtualKey.D:
+                    Player.Margin = new Thickness(Player.Margin.Left + 20.0, Player.Margin.Top, Player.Margin.Right + 20.0, Player.Margin.Bottom);
+                    break;
+            }
         }
     }
 }

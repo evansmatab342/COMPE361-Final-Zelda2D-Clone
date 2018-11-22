@@ -18,6 +18,7 @@
 		<Button x:Name="Button_Down" Content="Down" HorizontalAlignment="Left" Margin="826,278,0,0" VerticalAlignment="Top" Width="134" FocusVisualPrimaryBrush="#FFB90000" FocusVisualSecondaryBrush="#99AE0000" BorderBrush="#FFF30000" Background="#336C0000" Click="Clicked_Down"/>
 		<Button x:Name="Button_Right" Content="Right" HorizontalAlignment="Left" Margin="982,232,0,0" VerticalAlignment="Top" Width="134" FocusVisualPrimaryBrush="#FFB90000" FocusVisualSecondaryBrush="#99AE0000" BorderBrush="#FFF30000" Background="#336C0000" Click="Clicked_Right"/>
 		<Button x:Name="Button_Left" Content="Left" HorizontalAlignment="Left" Margin="666,232,0,0" VerticalAlignment="Top" Width="134" FocusVisualPrimaryBrush="#FFB90000" FocusVisualSecondaryBrush="#99AE0000" BorderBrush="#FFF30000" Background="#336C0000" Click="Clicked_Left"/>
+		<TextBox x:Name="Movement" HorizontalAlignment="Left" Margin="1161,387,0,0" Text="Write here to move" VerticalAlignment="Top" Height="218" Width="256" KeyDown="keyPressed"/>
 
 	</Grid>
 </Page>
