@@ -8,7 +8,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-	<Grid x:Name="Background">
+	<Grid x:Name="BackgroundGrid">
 		<Image x:Name="Player" HorizontalAlignment="Left" Height="96" Margin="678,424,0,0" VerticalAlignment="Top" Width="68" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Source="/Assets/LinkSpriteTest.gif" AutomationProperties.AccessibilityView="Control">
 			<Image.RenderTransform>
 				<CompositeTransform Rotation="-0.679"/>

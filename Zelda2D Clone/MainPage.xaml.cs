@@ -13,6 +13,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.System;
+using Zelda2D_Clone.Levels_and_Movement;
+using System.Threading.Tasks;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -23,7 +25,6 @@ namespace Zelda2D_Clone
         public MainPage()
         {
             this.InitializeComponent();
-            
         }
 
         /* The following "Clicked_YY" methods are used for moving the player. 
