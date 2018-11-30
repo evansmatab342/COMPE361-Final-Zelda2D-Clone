@@ -27,15 +27,18 @@ namespace Zelda2D_Clone.Levels_and_Movement
         string[] adjLevels;
 
         //Default constructor fills the lists with 0s.
-        Level_Management()
+        public Level_Management()
         {
+            //Used to add empty lists of integers
+            List<int> zeros = new List<int>();
+            for(int i = 0; i < 25; ++i)
+            {
+                zeros.Add(0); 
+            }
             for (int line = 0; line < 25; ++line)
             {
-                for (int i = 0; i < 25; ++i)
-                {
-                    aLevel[line].Add(0);
-                    bLevel[line].Add(0);
-                }
+                    aLevel.Add(zeros);
+                    bLevel.Add(zeros);
             }
         }
         /* This is used to select which level will be chosen next. Levels are divided into subscreens.
@@ -67,11 +70,13 @@ namespace Zelda2D_Clone.Levels_and_Movement
         }
         /* The following loads a level, as specified by the string passed into it.
          * We iterate through the text file and load every value into the list.
+         * 11 30 2018 changing to public for debugging change later to private
          */
-        private void levelLoader(string level)
+        public void levelLoader(string level)
         {
             int line;       //Used to iterate through each line in a text file
             string lineString;  //Used to load line. Each character is then read and translated into integers. The integers are then placed in the aLevel/bLevel List
+            int i = 0;      //Used to iterate through integers
             try
             {
                 for (line = 0; line < 25; ++line)
@@ -79,7 +84,6 @@ namespace Zelda2D_Clone.Levels_and_Movement
                     lineString = File.ReadLines(level).Skip(line).Take(1).First();
                     foreach (char tile in lineString)
                     {
-                        int i = 0;
                         aLevel[line][i++] = (int)Char.GetNumericValue(tile); //From the list we access the value, We then convert the character from the line string into an integer.
                     }
                 }

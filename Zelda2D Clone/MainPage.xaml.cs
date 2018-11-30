@@ -25,6 +25,7 @@ namespace Zelda2D_Clone
         public MainPage()
         {
             this.InitializeComponent();
+            
         }
 
         /* The following "Clicked_YY" methods are used for moving the player. 
